@@ -13,7 +13,6 @@
             <class name="tests.SignInTest"/>
         </classes>
     </test>
-
     <test name="Web Test - Firefox">
         <parameter name="browser" value="firefox"/>
         <classes>

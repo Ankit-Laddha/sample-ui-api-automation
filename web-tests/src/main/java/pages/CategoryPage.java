@@ -17,7 +17,7 @@ public class CategoryPage extends Basepage {
 
     public ProductPage openProductByName(String productName) throws InterruptedException {
         WebElement element = driver.findElement(By.xpath(String.format("//a[@title='%s" +
-                "']/ancestor::li", productName)));
+                "']/ancestor::li/div//img", productName)));
         int counter = 0;
         do {
 
@@ -27,7 +27,7 @@ public class CategoryPage extends Basepage {
             waitUntilElementIsDisplayed(element);
 
             Actions action = new Actions(driver);
-            action.moveToElement(element).click(element).build().perform();
+            action.moveToElement(element).moveToElement(element).build().perform();
             action.moveToElement(more).click(more).build().perform();
             Thread.sleep(2000);
         } while (isElementDisplayed(element) && counter++ < 3);
