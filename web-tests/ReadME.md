@@ -1,13 +1,14 @@
-## Api test Details
+## Web test Details
 
 #### Details
 
 ```text
    Website under test: http://automationpractice.com/index.php
-   Tool: Selenium Webdriver with TestNG 
+   Tool: Selenium Webdriver
    Language: JAVA
    Reporting: Allure
    CI/CD: Local Jenkins
+   Test Runner: TestNG
 ```
     
 #### Setup: 
@@ -22,8 +23,9 @@
     
 #### How to execute
 
- * We will use maven commands to trigger our tests. We are also using TestNG group to run certain set of tests.
- As of now, we have only two groups in our tests
+ * We will use maven commands to trigger our tests. All the Tests will run on Chrome & Firefox in parallel.
+ Also no need to configure driver, framework will detect your browser version and download compatible driver to run
+  tests
  
     ```bash
     cd web-tests

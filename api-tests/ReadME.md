@@ -12,7 +12,7 @@
 #### Setup: 
  
  * Create a new account on https://uebermaps.com/.
-   * Add environment variable for your credentials. Test will pick them up.
+   * Save your credentials in environment variables. Test will pick them up.
    ```bash
     export MAPS_UNAME="<your-email-id-here>"
     export MAPS_PWD="<your-password-here>"
