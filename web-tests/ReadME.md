@@ -38,3 +38,11 @@
     ```bash
     allure serve target/allure-results  
     ```
+ * Sample local run is attached as `web-browser-tests.png`
+
+#### CI/CD
+
+ * For CI/CD, I'm using local jenkins setup and using mvn as a trigger command to run.
+ One can find the screenshot of jenkins run in this project
+ 
+ * Sample local run is attached as `local-jenkins-result.png`

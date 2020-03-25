@@ -42,3 +42,4 @@
     ```bash
     allure serve target/allure-results  
     ```
+ * Sample HTML report of the local run is attached as `api-tests-html-results.png`
