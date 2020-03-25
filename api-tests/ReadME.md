@@ -17,7 +17,6 @@
     export MAPS_UNAME="<your-email-id-here>"
     export MAPS_PWD="<your-password-here>"
    ```
- * Replace your credentials in `src/test/java/scenarios/BaseTest.java` file
    
 #### Endpoints:
  * Here we are only dealing with endpoints of Map (https://uebermaps.com/api/v2#resource_Maps) & Comments (https://uebermaps.com/api/v2#resource_Comments)
