@@ -10,27 +10,23 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
 
-    protected WebDriver driver;
-
     public static final String url = "http://automationpractice.com/index.php";
 
+    protected WebDriver webDriver;
+
     @Parameters({"browser"})
-    @BeforeClass(alwaysRun = true)
+    @BeforeClass()
     public void setup(@Optional("chrome") String browser) {
 
-        System.out.println("ABC = In setup() ");
-        System.out.println("browser = " + browser);
-        WebDriverFactory.init(browser);
-        this.driver = WebDriverFactory.getCurrentDriver();
-        this.driver.manage().window().maximize();
-        this.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        this.driver.get(url);
+        webDriver = DriverFactory.createInstance(browser);
+        DriverManager.setWebDriver(webDriver);
+        webDriver.manage().window().maximize();
+        webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        webDriver.get(url);
     }
 
-    @AfterClass(alwaysRun = true)
-    public void tearDownNew() {
-        System.out.println(" ABC = tearDownNew ");
-        WebDriverFactory.getCurrentDriver().quit();
+    @AfterClass()
+    public void tearDown() {
+        DriverManager.quitWebDriver();
     }
-
 }

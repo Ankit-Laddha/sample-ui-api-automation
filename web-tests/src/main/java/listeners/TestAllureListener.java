@@ -6,7 +6,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import utils.WebDriverFactory;
+import utils.DriverManager;
 
 public class TestAllureListener implements ITestListener {
 
@@ -22,9 +22,8 @@ public class TestAllureListener implements ITestListener {
 
     @Override
     public void onTestFailure(ITestResult iTestResult) {
-        System.out.println("I am in onTestFailure method " + getTestMethodName(iTestResult) + " failed");
-        //Object testClass = iTestResult.getInstance();
-        WebDriver driver = WebDriverFactory.getCurrentDriver();
+        System.out.println("I am in onTestFailure method: `" + getTestMethodName(iTestResult) + "` failed");
+        WebDriver driver = DriverManager.getWebDriver();
         // Allure ScreenShotRobot
         if (driver instanceof WebDriver) {
             System.out.println("Screenshot captured for test case:" + getTestMethodName(iTestResult));

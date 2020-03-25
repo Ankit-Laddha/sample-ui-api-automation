@@ -9,9 +9,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class SignInTest extends BaseTest {
 
-    String existingUserEmail = "ankit.laddha+demo@live.com";
-    //This pwd is incorrect. Use your own account pls
-    String existingUserPassword = "test@123";
+    String existingUserEmail = System.getenv("DEMO_UNAME");
+
+    String existingUserPassword = System.getenv("DEMO_PWD");
 
     @Test(priority = 1, groups = {"login", "smoke"})
     public void loginWithExistingUser_should_be_successful() throws Exception {
@@ -23,10 +23,11 @@ public class SignInTest extends BaseTest {
         assertThat(myAccount.getHeaderText()).isEqualTo("MY ACCOUNT");
         assertThat(homepage.header.getUserDetails()).isEqualTo(fullName);
         assertThat(myAccount.getWelcomeText()).contains("Welcome to your account.");
-        Thread.sleep(5000);
+
+        assertThat(webDriver.getCurrentUrl()).contains("controller=my-account");
+
         //Failing this specifically to capture screenshot and display in reports
         assertThat(homepage.header.isLogoutDisplayed()).isTrue();
-        assertThat(driver.getCurrentUrl()).contains("controller=my-account");
     }
 
 }

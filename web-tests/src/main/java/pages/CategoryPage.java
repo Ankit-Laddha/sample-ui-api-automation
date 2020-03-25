@@ -15,15 +15,23 @@ public class CategoryPage extends Basepage {
     @FindBy(linkText = "More")
     protected WebElement more;
 
-    public ProductPage openProductByName(String productName) {
+    public ProductPage openProductByName(String productName) throws InterruptedException {
+        WebElement element = driver.findElement(By.xpath(String.format("//a[@title='%s" +
+                "']/ancestor::li", productName)));
+        int counter = 0;
+        do {
 
-        WebElement element = driver.findElement(By.xpath(String.format("//a[@title='%s']/ancestor::li", productName)));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",
+                    element);
 
-        waitUntilElementIsDisplayed(element);
-        Actions action = new Actions(driver);
-        action.moveToElement(element).doubleClick().perform();
-        action.moveToElement(more).click(more).build().perform();
+            waitUntilElementIsDisplayed(element);
+
+            Actions action = new Actions(driver);
+            action.moveToElement(element).click(element).build().perform();
+            action.moveToElement(more).click(more).build().perform();
+            Thread.sleep(2000);
+        } while (isElementDisplayed(element) && counter++ < 3);
+
         return new ProductPage();
     }
 }

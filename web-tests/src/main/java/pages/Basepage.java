@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import utils.WebDriverFactory;
+import utils.DriverManager;
 
 import java.time.Duration;
 
@@ -18,8 +18,8 @@ public abstract class Basepage {
     protected WebDriver driver;
 
     protected void initElements(Object instance) {
-        this.driver = WebDriverFactory.getCurrentDriver();
-        PageFactory.initElements(this.driver, instance);
+        this.driver = DriverManager.getWebDriver();
+        PageFactory.initElements(driver, instance);
     }
 
     protected void enterText(WebElement element, String value) {
@@ -30,13 +30,13 @@ public abstract class Basepage {
 
     protected void waitUntilElementIsClickable(WebElement element) {
         waitUntilElementIsDisplayed(element);
-        new WebDriverWait(this.driver, 30)
+        new WebDriverWait(DriverManager.getWebDriver(), 30)
                 .until(ExpectedConditions.elementToBeClickable(element));
     }
 
     protected void waitUntilElementIsDisplayed(WebElement element) {
         FluentWait<WebElement> wait = new FluentWait<>(element);
-        wait.withTimeout(Duration.ofSeconds(10));
+        wait.withTimeout(Duration.ofSeconds(30));
         wait.until(webElement -> isElementDisplayed(webElement));
     }
 

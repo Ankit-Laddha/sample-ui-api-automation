@@ -14,7 +14,7 @@ public class CheckoutTest extends BaseTest {
         homepage
                 .header
                 .gotoCategory("Women")
-                .openProductByName("Printed Summer Dress")
+                .openProductByName("Printed Chiffon Dress")
                 .addToCartDefault();
 
         homepage

@@ -5,18 +5,19 @@
     <listeners>
         <listener class-name="listeners.TestAllureListener"/>
     </listeners>
+
     <test name="Web Test - Chrome">
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="tests.CheckoutTest"/>
-            <!--<class name="tests.SignInTest"/>-->
+            <class name="tests.SignInTest"/>
         </classes>
     </test>
 
     <test name="Web Test - Firefox">
         <parameter name="browser" value="firefox"/>
         <classes>
-            <!--<class name="tests.CheckoutTest"/>-->
+            <class name="tests.CheckoutTest"/>
             <class name="tests.SignInTest"/>
         </classes>
     </test>
