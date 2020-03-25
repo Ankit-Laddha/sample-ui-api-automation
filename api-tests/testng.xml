@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!--Executing the test cases in parallel with max thread count of 2-->
+<suite name="Uebermaps test suite ">
+    <test name="API Tests">
+        <classes>
+            <class name="scenarios.CommentsTest"/>
+            <class name="scenarios.MapsTest"/>
+        </classes>
+    </test>
+</suite>
