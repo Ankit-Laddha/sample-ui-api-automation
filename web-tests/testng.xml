@@ -1,0 +1,24 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite thread-count="6" verbose="1" name="Web Tests Suite" annotations="JDK" parallel="tests">
+
+    <listeners>
+        <listener class-name="listeners.TestAllureListener"/>
+    </listeners>
+    <test name="Web Test - Chrome">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="tests.CheckoutTest"/>
+            <!--<class name="tests.SignInTest"/>-->
+        </classes>
+    </test>
+
+    <test name="Web Test - Firefox">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <!--<class name="tests.CheckoutTest"/>-->
+            <class name="tests.SignInTest"/>
+        </classes>
+    </test>
+
+</suite>
