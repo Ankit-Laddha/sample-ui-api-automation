@@ -9,7 +9,7 @@
     <test name="Web Test - Chrome">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="tests.CheckoutTest"/>
+           <!-- <class name="tests.CheckoutTest"/>-->
             <class name="tests.SignInTest"/>
         </classes>
     </test>

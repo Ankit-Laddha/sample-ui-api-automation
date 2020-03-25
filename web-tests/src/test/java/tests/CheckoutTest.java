@@ -9,6 +9,7 @@ public class CheckoutTest extends BaseTest {
 
     @Test(priority = 3, groups = {"checkout", "smoke"})
     public void checkoutTest() throws Exception {
+        logger.info("Starting Test: checkoutTest" );
         Home homepage = new Home();
 
         homepage

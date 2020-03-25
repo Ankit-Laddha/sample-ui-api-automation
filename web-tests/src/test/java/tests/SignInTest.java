@@ -12,9 +12,11 @@ public class SignInTest extends BaseTest {
     String existingUserEmail = System.getenv("DEMO_UNAME");
     String existingUserPassword = System.getenv("DEMO_PWD");
 
+
     @Test(priority = 1, groups = {"login", "smoke"})
     public void loginWithExistingUser_should_be_successful() throws Exception {
 
+        logger.info("Starting Test: loginWithExistingUser_should_be_successful" );
         String fullName = "Ankit Laddha";
         Home homepage = new Home();
         MyAccount myAccount = homepage.header.initiateSignIn().signIn(existingUserEmail, existingUserPassword);
@@ -26,7 +28,6 @@ public class SignInTest extends BaseTest {
 
         assertThat(webDriver.getCurrentUrl()).contains("controller=my-account");
 
-        //Failing this specifically to capture screenshot and display in reports
         assertThat(homepage.header.isLogoutDisplayed()).isTrue();
     }
 

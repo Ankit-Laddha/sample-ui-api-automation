@@ -3,8 +3,10 @@
 *.iws
 
 # Maven
-logs/
 target/
 
 # MAC
 .DS_Store
+
+#Ignoring the updates in log file
+logs/
