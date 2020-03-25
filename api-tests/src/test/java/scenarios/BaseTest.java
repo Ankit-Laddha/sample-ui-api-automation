@@ -27,7 +27,7 @@ public abstract class BaseTest {
 
         authToken =
                 REQUEST
-                        .auth().basic("your-email-here", "your-password-here")
+                        .auth().basic(System.getenv("MAPS_UNAME"), System.getenv("MAPS_PWD"))
                         .get("/authentication")
                         .then().log().all()
                         .statusCode(200)

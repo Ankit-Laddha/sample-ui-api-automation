@@ -17,7 +17,6 @@ public class MapApi extends BaseApi {
     public static Response createMap() {
 
         String cityName = FAKER.address().cityName();
-        System.out.println("ABC - cityName = " + cityName);
         Map newMap = Map.builder().title(String.format("%s Map", cityName)).build();
 
         return REQUEST

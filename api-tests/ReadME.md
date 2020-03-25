@@ -11,7 +11,12 @@
     
 #### Setup: 
  
- * Create a new account on https://uebermaps.com/. You would need the credentials to create AUTH-TOKEN for your tests
+ * Create a new account on https://uebermaps.com/.
+   * Add environment variable for your credentials. Test will pick them up.
+   ```bash
+    export MAPS_UNAME="<your-email-id-here>"
+    export MAPS_PWD="<your-password-here>"
+   ```
  * Replace your credentials in `src/test/java/scenarios/BaseTest.java` file
    
 #### Endpoints:
