@@ -48,3 +48,16 @@
  One can find the screenshot of jenkins run in this project
  
  * Sample local run is attached as `local-jenkins-result.png`
+
+
+#### TestFlow
+ 
+ * Here we have two e2e tests which are automated
+    ```text
+    1. Sign-inTest: This tests tries to login with provided credentials and checks if log-in was successful or not  
+    ``` 
+   
+    ```text
+    2. Checkout: This tests does complete e2e till checkout. It searches for the product in three different
+    categories/ways, add them and then in the end remove one from the cart. It then proceeds for the checkout.
+    ``` 
