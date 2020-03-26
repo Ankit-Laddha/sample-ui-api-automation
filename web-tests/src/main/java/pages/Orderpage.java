@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class Orderpage extends Basepage{
+public class Orderpage extends Basepage {
 
     @FindBy(linkText = "Proceed to checkout")
     protected WebElement proceedToCheckout;
@@ -19,8 +19,8 @@ public class Orderpage extends Basepage{
         return new Orderpage();
     }
 
-    public void proceedToCheckout() throws InterruptedException {
+    public Authentication proceedToCheckout() {
         proceedToCheckout.click();
-        Thread.sleep(4000);
+        return new Authentication();
     }
 }

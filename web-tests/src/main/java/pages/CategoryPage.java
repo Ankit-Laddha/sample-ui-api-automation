@@ -8,12 +8,12 @@ import org.openqa.selenium.support.FindBy;
 
 public class CategoryPage extends Basepage {
 
+    @FindBy(linkText = "More")
+    protected WebElement more;
+
     public CategoryPage() {
         initElements(this);
     }
-
-    @FindBy(linkText = "More")
-    protected WebElement more;
 
     public ProductPage openProductByName(String productName) throws InterruptedException {
         WebElement element = driver.findElement(By.xpath(String.format("//a[@title='%s" +

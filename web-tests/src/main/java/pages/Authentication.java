@@ -30,4 +30,9 @@ public class Authentication extends Basepage {
         btn_signIn.click();
         return new MyAccount();
     }
+
+    public boolean isEmailDisplayed() throws InterruptedException {
+        Thread.sleep(2000);
+        return isElementDisplayed(signInEmail);
+    }
 }

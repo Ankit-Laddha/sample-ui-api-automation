@@ -36,7 +36,6 @@ public class MapsTest extends BaseTest {
                 .statusCode(404);
     }
 
-
     @Test(groups = "invalidToken")
     public void gettingMapWithoutAuthTokenThrows403() {
         MapApi.getMapById(1234)

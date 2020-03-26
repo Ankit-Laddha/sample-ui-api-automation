@@ -12,8 +12,7 @@ public class ProductPage extends Basepage {
         initElements(this);
     }
 
-    public LayerCart addToCartDefault()
-    {
+    public LayerCart addToCartDefault() {
         btn_addToCart.click();
         return new LayerCart();
     }

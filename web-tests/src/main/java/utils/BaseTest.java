@@ -1,6 +1,5 @@
 package utils;
 
-import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -15,16 +14,15 @@ public class BaseTest {
 
     public static final String url = "http://automationpractice.com/index.php";
 
-    protected WebDriver webDriver;
-
     public static final Logger logger = LogManager.getLogger(BaseTest.class.getName());
 
+    protected WebDriver webDriver;
 
     @Parameters({"browser"})
     @BeforeClass()
     public void setup(@Optional("chrome") String browser) {
 
-        logger.info("Creating Browser: "+ browser);
+        logger.info("Creating Browser: " + browser);
 
         webDriver = DriverFactory.createInstance(browser);
         DriverManager.setWebDriver(webDriver);

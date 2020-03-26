@@ -12,7 +12,7 @@
     </content>
     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.assertj:assertj-core:3.15.0" level="project" />
+    <orderEntry type="library" name="Maven: org.assertj:assertj-core:3.15.0" level="project" />
     <orderEntry type="library" name="Maven: io.qameta.allure:allure-testng:2.13.2" level="project" />
     <orderEntry type="library" name="Maven: io.qameta.allure:allure-java-commons:2.13.2" level="project" />
     <orderEntry type="library" name="Maven: io.qameta.allure:allure-model:2.13.2" level="project" />

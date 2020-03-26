@@ -10,13 +10,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class SignInTest extends BaseTest {
 
     String existingUserEmail = System.getenv("DEMO_UNAME");
-    String existingUserPassword = System.getenv("DEMO_PWD");
 
+    String existingUserPassword = System.getenv("DEMO_PWD");
 
     @Test(priority = 1, groups = {"login", "smoke"})
     public void loginWithExistingUser_should_be_successful() throws Exception {
 
-        logger.info("Starting Test: loginWithExistingUser_should_be_successful" );
+        logger.info("Starting Test: loginWithExistingUser_should_be_successful");
         String fullName = "Ankit Laddha";
         Home homepage = new Home();
         MyAccount myAccount = homepage.header.initiateSignIn().signIn(existingUserEmail, existingUserPassword);

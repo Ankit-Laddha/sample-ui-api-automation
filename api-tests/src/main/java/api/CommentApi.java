@@ -17,7 +17,7 @@ public class CommentApi extends BaseApi {
 
         Comment newComment = Comment
                 .builder()
-                .body(String.format("I like country: %s",FAKER.address().country()))
+                .body(String.format("I like country: %s", FAKER.address().country()))
                 .build();
 
         return REQUEST
